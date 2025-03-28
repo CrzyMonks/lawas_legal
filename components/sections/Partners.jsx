@@ -60,7 +60,7 @@ export default function Partners() {
   }, [])
 
   return (
-    <section className="bg-lawas-light py-24">
+    <section className="bg-lawas-heading py-24">
       <div ref={containerRef} className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
           className="text-center"
@@ -69,7 +69,7 @@ export default function Partners() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="mb-12 text-3xl font-bold text-lawas-heading sm:text-4xl">
+          <h2 className="mb-12 text-3xl font-bold text-lawas-accent sm:text-4xl">
             Our Partners
           </h2>
 
@@ -92,10 +92,10 @@ export default function Partners() {
                     sizes="(max-width: 768px) 90vw, 300px"
                   />
                 </div>
-                <h3 className="mb-2 text-2xl font-semibold text-lawas-heading">
+                <h3 className="mb-2 text-2xl font-semibold text-lawas-accent">
                   {partner.name}
                 </h3>
-                <p className="text-lg text-lawas-body">
+                <p className="text-lg text-white">
                   {partner.role}
                 </p>
               </div>
@@ -110,7 +110,7 @@ export default function Partners() {
           >
             <Button 
               size="lg"
-              className="bg-lawas-button text-white hover:bg-lawas-button/90"
+              className="bg-lawas-accent text-white hover:bg-lawas-accent/90"
               onClick={handlePartnerClick}
             >
               Meet Our Partners

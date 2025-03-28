@@ -1,4 +1,3 @@
-
 import Hero from '@/components/sections/Hero'
 import VideoSection from '@/components/sections/VideoSection'
 import AboutPreview from '@/components/sections/AboutPreview'
@@ -7,7 +6,7 @@ import Contact from '@/components/sections/Contact'
 
 export default function Home() {
   return (
-    <div className="w-full">
+    <div className="w-full bg-lawas-heading">
       <Hero />
       <VideoSection />
       <AboutPreview />

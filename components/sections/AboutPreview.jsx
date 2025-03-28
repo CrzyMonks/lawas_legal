@@ -5,7 +5,7 @@ import Link from 'next/link'
 
 export default function AboutPreview() {
   return (
-    <section className="bg-white py-24">
+    <section className="bg-lawas-heading py-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
           className="mx-auto max-w-3xl text-center"
@@ -15,7 +15,7 @@ export default function AboutPreview() {
           viewport={{ once: true }}
         >
           <motion.h2 
-            className="mb-6 text-3xl font-bold text-lawas-heading sm:text-4xl"
+            className="mb-6 text-3xl font-bold text-lawas-accent sm:text-4xl"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -27,7 +27,7 @@ export default function AboutPreview() {
           <div className="relative">
             
             <motion.p 
-              className="mb-8 text-lg text-lawas-body px-8"
+              className="mb-8 text-lg text-white px-8"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}

@@ -33,9 +33,9 @@ export default function Hero() {
   }
 
   return (
-    <section className="relative h-screen w-full bg-lawas-light">
+    <section className="relative h-screen w-full bg-lawas-heading">
       {/* Background with overlay */}
-      <div className={`absolute inset-0 bg-gradient-to-r from-lawas-heading/90 to-lawas-heading/70 transition-opacity duration-500 ${isImageLoaded ? 'opacity-100' : 'opacity-0'}`}>
+      <div className={`absolute inset-0 bg-gradient-to-r from-lawas-heading to-lawas-heading/90 transition-opacity duration-500 ${isImageLoaded ? 'opacity-100' : 'opacity-0'}`}>
         <Image
           src="/images/lawas_bg.jpg"
           alt="Legal office background"
@@ -52,13 +52,13 @@ export default function Hero() {
         className="relative z-10 flex h-full items-center justify-center px-4 sm:px-6 lg:px-8"
       >
         <div className="text-center">
-          <h1 className="animate-fade-in mb-6 text-4xl font-bold text-white sm:text-5xl lg:text-6xl">
+          <h1 className="animate-fade-in mb-6 text-4xl font-bold text-lawas-accent sm:text-5xl lg:text-6xl">
             Expert Legal Solutions
             <br />
-            <span className="text-lawas-accent">Tailored for You</span>
+            <span className="text-white">Tailored for You</span>
           </h1>
           
-          <p className="animate-fade-in mx-auto mb-8 max-w-2xl text-lg text-gray-200">
+          <p className="animate-fade-in mx-auto mb-8 max-w-2xl text-lg text-white">
             Providing comprehensive legal services with a commitment to excellence and client satisfaction
           </p>
           
