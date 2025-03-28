@@ -28,7 +28,6 @@ export default function VideoSection() {
       {/* Video Background */}
       <div className={`absolute inset-0 transition-opacity duration-500`}>
         <video 
-          controls
           preload="auto"
           autoPlay
           loop

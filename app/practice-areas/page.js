@@ -67,7 +67,7 @@ export default function PracticeAreasPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-white py-24">
+    <div className="min-h-screen bg-lawas-heading py-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="mx-auto max-w-3xl text-center"
@@ -75,10 +75,10 @@ export default function PracticeAreasPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="mb-6 text-4xl font-bold text-lawas-heading sm:text-5xl">
+          <h1 className="mb-6 text-4xl font-bold text-lawas-accent sm:text-5xl">
             Practice Areas
           </h1>
-          <p className="mb-16 text-lg text-lawas-body">
+          <p className="mb-16 text-lg text-white">
             Our firm offers expertise across a wide range of legal practice areas, providing comprehensive solutions tailored to your specific needs.
           </p>
         </motion.div>
@@ -90,35 +90,23 @@ export default function PracticeAreasPage() {
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           {practiceAreas.map((area, index) => (
-            <motion.div
-              key={area.title}
-              className="rounded-lg bg-lawas-light p-8 shadow-lg"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: index * 0.1 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="mb-4 text-2xl font-bold text-lawas-heading">
+            <div key={area.title} className="rounded-lg bg-white/10 p-8 backdrop-blur-sm">
+              <h2 className="mb-4 text-2xl font-bold text-lawas-accent">
                 {area.title}
               </h2>
-              <p className="mb-6 text-lawas-body">
+              <p className="mb-6 text-white">
                 {area.description}
               </p>
               {area.services.length > 0 && (
-                <>
-                  <h3 className="mb-3 text-lg font-semibold text-lawas-heading">
-                    Our Services:
-                  </h3>
-                  <ul className="list-inside list-disc space-y-2 text-lawas-body">
-                    {area.services.map((service, idx) => (
-                      <li key={idx} className="ml-4">
-                        {service}
-                      </li>
-                    ))}
-                  </ul>
-                </>
+                <ul className="list-disc pl-6 space-y-2">
+                  {area.services.map((service, serviceIndex) => (
+                    <li key={serviceIndex} className="text-white">
+                      {service}
+                    </li>
+                  ))}
+                </ul>
               )}
-            </motion.div>
+            </div>
           ))}
         </motion.div>
       </div>

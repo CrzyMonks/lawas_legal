@@ -65,7 +65,7 @@ export default function Hero() {
           <div className="animate-fade-in">
             <Button 
               size="lg"
-              className="bg-lawas-button text-white hover:bg-lawas-button/90"
+              className="bg-lawas-accent text-white hover:bg-lawas-accent/90"
               onClick={handleKnowMoreClick}
             >
               Know More

@@ -47,7 +47,7 @@ export default function AboutPreview() {
             <Link href="/about">
               <Button 
                 size="lg"
-                className="bg-lawas-button text-white hover:bg-lawas-button/90"
+                className="bg-lawas-accent text-white hover:bg-lawas-accent/90"
               >
                 Learn More About Us
               </Button>
