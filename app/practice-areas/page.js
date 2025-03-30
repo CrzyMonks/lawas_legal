@@ -1,9 +1,31 @@
 'use client'
 import { motion } from "motion/react"
+import { useScrollToHash } from '@/app/utils/useScrollToHash'
+import { useState, useEffect } from 'react'
 
 export default function PracticeAreasPage() {
+  useScrollToHash()
+  const [highlightedSection, setHighlightedSection] = useState(null)
+  
+  useEffect(() => {
+    // Check if we need to highlight a section
+    const hash = window.location.hash.substring(1)
+    
+    if (hash) {
+      setHighlightedSection(hash)
+      
+      // Remove highlight after 3 seconds
+      const timer = setTimeout(() => {
+        setHighlightedSection(null)
+      }, 3000)
+      
+      return () => clearTimeout(timer)
+    }
+  }, [])
+
   const practiceAreas = [
     {
+      id: "commercial-law",
       title: "Commercial Law",
       description: "Our firm specializes in Commercial Law, offering comprehensive legal services for businesses, firms, and individuals. With the enactment of the Commercial Courts Act, 2015, commercial disputes are now adjudicated through a specialized and efficient mechanism.",
       services: [
@@ -14,6 +36,7 @@ export default function PracticeAreasPage() {
       ]
     },
     {
+      id: "company-law",
       title: "Company Law",
       description: "The Companies Act, 1956 & 2013, regulated by the Ministry of Corporate Affairs, governs the formation and operations of companies in India. Compliance with statutory regulations is mandatory.",
       services: [
@@ -23,11 +46,13 @@ export default function PracticeAreasPage() {
       ]
     },
     {
+      id: "litigation",
       title: "Litigation",
       description: "LawAS Legal has a renowned litigation practice, providing strategic legal solutions across diverse practice areas. Our legal team has extensive experience advocating for clients at all judicial levels, including the Supreme Court of India, various High Courts, district and subordinate courts, Tribunals, and specialized quasi-judicial bodies.",
       services: []
     },
     {
+      id: "arbitration",
       title: "Arbitration and Dispute Resolution",
       description: "Arbitration is an efficient and expedited mechanism for resolving disputes. LawAS Legal provides comprehensive legal support in arbitration matters, including advisory services on dispute resolution, contract execution, and legal documentation.",
       services: [
@@ -37,6 +62,7 @@ export default function PracticeAreasPage() {
       ]
     },
     {
+      id: "consumer-law",
       title: "Consumer Law",
       description: "Under the Consumer Protection Act, 2019, we provide comprehensive legal assistance in consumer protection matters. Our expertise covers consumer dispute resolution through Consumer Forums at District, State, and National levels.",
       services: [
@@ -46,6 +72,7 @@ export default function PracticeAreasPage() {
       ]
     },
     {
+      id: "criminal-law",
       title: "Criminal Law",
       description: "We provide comprehensive legal representation in all aspects of criminal litigation, handling matters before Executive and Judicial Magistrates, addressing law and order issues and trials for offenses under penal laws.",
       services: [
@@ -56,6 +83,7 @@ export default function PracticeAreasPage() {
       ]
     },
     {
+      id: "debt-recovery",
       title: "Debt Recovery & SARFAESI Act",
       description: "We specialize in banking and debt recovery laws under the SARFAESI Act, 2002, assisting cooperative and commercial banks in efficient debt recovery processes.",
       services: [
@@ -93,7 +121,12 @@ export default function PracticeAreasPage() {
             {practiceAreas.map((area, index) => (
               <motion.div
                 key={area.title}
-                className="rounded-lg bg-white/10 p-8 backdrop-blur-sm"
+                id={area.id}
+                className={`rounded-lg p-8 backdrop-blur-sm scroll-mt-24 transition-all duration-500 ${
+                  highlightedSection === area.id 
+                  ? "bg-lawas-accent/20 shadow-lg ring-2 ring-lawas-button" 
+                  : "bg-white/10"
+                }`}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
@@ -121,4 +154,4 @@ export default function PracticeAreasPage() {
       </div>
     </div>
   )
-} 
+}

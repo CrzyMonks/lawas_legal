@@ -19,42 +19,55 @@ export default function PracticeAreasPreview() {
     {
       title: "Commercial Law",
       description: "Comprehensive legal services for businesses and commercial transactions",
-      icon: Building2
+      icon: Building2,
+      id: "commercial-law"
     },
     {
       title: "Company Law",
       description: "Expert guidance in corporate governance and compliance",
-      icon: Scale
+      icon: Scale,
+      id: "company-law"
     },
     {
       title: "Litigation",
-      description: "Strategic legal solutions across diverse practice areas",
-      icon: GavelIcon
+      description: "We deliver expert litigation services, focusing on dispute resolution and court representation.",
+      icon: GavelIcon,
+      id: "litigation"
     },
     {
       title: "Arbitration and Dispute Resolution",
-      description: "Efficient resolution of complex legal disputes",
-      icon: FileSymlink
+      description: "Pioneering arbitration and dispute resolution with tailored legal strategies",
+      icon: FileSymlink,
+      id: "arbitration"
     },
     {
       title: "Consumer Law",
-      description: "Protection and advocacy in consumer rights matters",
-      icon: ShieldAlert
+      description: "Advocating for consumer rights with expert legal solutions and enforcement.",
+      icon: ShieldAlert,
+      id: "consumer-law"
     },
     {
       title: "Criminal Law",
-      description: "Comprehensive criminal litigation and representation",
-      icon: BadgeAlert
+      description: "Expert criminal law services focusing on defense, advocacy, and justice",
+      icon: BadgeAlert,
+      id: "criminal-law"
     },
     {
       title: "Debt Recovery & SARFAESI Act",
-      description: "Specialized services in banking and debt recovery",
-      icon: Banknote
+      description: "Enforcing creditor rights with expert debt recovery and SARFAESI Act support",
+      icon: Banknote,
+      id: "debt-recovery"
     }
   ]
 
+  // Function to handle navigation to all practice areas
   const handleViewMore = () => {
     router.push('/practice-areas')
+  }
+
+  // Function to navigate to a specific practice area
+  const navigateToArea = (id) => {
+    router.push(`/practice-areas#${id}`)
   }
 
   return (
@@ -79,11 +92,12 @@ export default function PracticeAreasPreview() {
           {practiceAreas.map((area, index) => (
             <motion.div
               key={area.title}
-              className="bg-white/5 backdrop-blur-sm rounded-lg p-6 flex flex-col items-center text-center"
+              className="bg-white/5 backdrop-blur-sm rounded-lg p-6 flex flex-col items-center text-center cursor-pointer hover:bg-white/10 transition-colors"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: index * 0.1 }}
               viewport={{ once: true }}
+              onClick={() => navigateToArea(area.id)}
             >
               <div className="mb-4 p-3 rounded-full bg-lawas-button/20">
                 <area.icon className="w-8 h-8 text-lawas-button" />
@@ -116,4 +130,4 @@ export default function PracticeAreasPreview() {
       </div>
     </section>
   )
-} 
+}
