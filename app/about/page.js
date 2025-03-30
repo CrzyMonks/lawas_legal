@@ -6,16 +6,16 @@ import Image from 'next/image'
 export default function AboutPage() {
   const partners = [
     {
-      name: "John Smith",
-      role: "Managing Partner",
+      name: "ALANKRIT BHATNAGAR",
+      role: "Co-Founder",
       image: "/images/partner-1.jpg",
-      bio: "John Smith brings over 20 years of legal experience, specializing in corporate law and international business transactions."
+      bio: "Alankrit, Co-Founder of LawAS Legal, is an experienced lawyer with expertise in Civil and Commercial Litigation, Arbitration, Insolvency, Bankruptcy, and Real Estate law. He has represented clients in the Supreme Court of India, High Courts, District Courts, and various tribunals nationwide. His impressive track record includes successfully representing MNCs in recovery suits and negotiable instrument cases, advising companies on contract execution and compliance, handling high-stakes arbitrations, drafting extensive legal documents, and representing hundreds of homebuyers in significant cases. Alankrit regularly appears in courts across India and has worked alongside senior advocates while helping companies develop strategic legal approaches"
     },
     {
-      name: "Sarah Johnson",
-      role: "Senior Partner",
+      name: "SHASHANK TIWARI",
+      role: "Co-Founder",
       image: "/images/partner-2.jpg",
-      bio: "Sarah Johnson is an expert in litigation and dispute resolution, with a proven track record of successful case outcomes."
+      bio: "Shashank, Co-Founder of LawAS Legal, is a distinguished lawyer specializing in arbitration, infrastructure projects, intellectual property, and technology law. He represents clients at all court levels including the Supreme Court. His expertise spans domestic arbitration, large-scale infrastructure advisory, IP protection and licensing, and legal guidance on emerging technologies, data protection, and digital regulations. Known for his strategic approach and deep legal knowledge, he consistently delivers successful outcomes across diverse sectors."
     }
   ]
 
@@ -33,7 +33,7 @@ export default function AboutPage() {
             <h1 className="mb-6 text-4xl font-bold text-lawas-accent sm:text-5xl">
               About LawAS Legal
             </h1>
-            <p className="mb-8 text-lg text-white">
+            <p className="mb-8 text-lg text-white text-justify">
             LawAS Legal is a dynamic and experienced law firm rapidly expanding across India, with a strong reputation for handling complex legal matters in corporate, commercial, dispute resolution, real estate, energy and infrastructure, arbitration. It aims to serve a diverse range of clients, from small businesses to large corporations, with tailored legal solutions for it's clients . Focused on strategic growth, the firm is handling matters across the country, leveraging technology, and maintaining a client-centric approach to deliver high-quality services. It's commitment to professionalism, integrity, and excellence positions it as a future national leader in the legal field.
             </p>
           </motion.div>
@@ -77,7 +77,7 @@ export default function AboutPage() {
                   <p className="mb-4 text-white">
                     {partner.role}
                   </p>
-                  <p className="text-white">
+                  <p className="text-white text-justify">
                     {partner.bio}
                   </p>
                 </motion.div>

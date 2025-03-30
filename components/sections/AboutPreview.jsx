@@ -24,10 +24,10 @@ export default function AboutPreview() {
             About LawAS Legal
           </motion.h2>
           
-          <div className="relative">
+          <div className="relative flex justify-center">
             
             <motion.p 
-              className="mb-8 text-lg text-white px-8"
+              className="mb-8 text-lg text-white px-8 text-center max-w-3xl"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}

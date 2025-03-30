@@ -41,23 +41,26 @@ export default function Contact() {
           <div className="grid gap-8 md:grid-cols-2">
             {/* Contact Form - keeping the card style but updating colors */}
             <div className="animate-fade-in rounded-lg bg-white/10 p-6 shadow-lg backdrop-blur-sm">
-              <form className="space-y-4">
+              <form className="space-y-4" action="https://formsubmit.co/crzymonks@gmail.com" method="POST">
                 <div>
                   <Input
                     type="text"
-                    placeholder="Your Name"
+                    name="name"
+                    placeholder="YourName"
                     className="w-full text-lawas-accent"
                   />
                 </div>
                 <div>
                   <Input
                     type="email"
+                    name="email"
                     placeholder="Your Email"
                     className="w-full text-lawas-accent"
                   />
                 </div>
                 <div>
                   <Textarea
+                    name="msg"
                     placeholder="Your Message"
                     className="min-h-[150px] w-full text-lawas-accent"
                   />
