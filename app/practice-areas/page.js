@@ -84,30 +84,39 @@ export default function PracticeAreasPage() {
         </motion.div>
 
         <motion.div
-          className="mx-auto max-w-6xl space-y-12"
+          className="mx-auto max-w-7xl"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          {practiceAreas.map((area, index) => (
-            <div key={area.title} className="rounded-lg bg-white/10 p-8 backdrop-blur-sm">
-              <h2 className="mb-4 text-2xl font-bold text-lawas-accent">
-                {area.title}
-              </h2>
-              <p className="mb-6 text-white">
-                {area.description}
-              </p>
-              {area.services.length > 0 && (
-                <ul className="list-disc pl-6 space-y-2">
-                  {area.services.map((service, serviceIndex) => (
-                    <li key={serviceIndex} className="text-white">
-                      {service}
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </div>
-          ))}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+            {practiceAreas.map((area, index) => (
+              <motion.div
+                key={area.title}
+                className="rounded-lg bg-white/10 p-8 backdrop-blur-sm"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
+                viewport={{ once: true }}
+              >
+                <h2 className="mb-4 text-2xl font-bold text-lawas-accent">
+                  {area.title}
+                </h2>
+                <p className="mb-6 text-white">
+                  {area.description}
+                </p>
+                {area.services.length > 0 && (
+                  <ul className="list-disc pl-6 space-y-2">
+                    {area.services.map((service, serviceIndex) => (
+                      <li key={serviceIndex} className="text-white">
+                        {service}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </motion.div>
+            ))}
+          </div>
         </motion.div>
       </div>
     </div>

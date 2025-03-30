@@ -43,11 +43,11 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <Image
-              src="/images/legal-logo.jpg"
+              src="/images/legal-logo-removebg-preview.png"
               alt="LawAS Legal Logo"
-              width={150}
-              height={40}
-              className="h-10 w-auto"
+              width={200}
+              height={133}
+              className="h-12 w-auto"
               priority
             />
           </Link>
@@ -73,7 +73,7 @@ export default function Navbar() {
               Practice Areas
             </Link>
             <Button 
-              className="bg-lawas-accent text-white hover:bg-lawas-accent/90"
+              className="bg-lawas-button text-white hover:bg-lawas-button/90"
               onClick={handleContactClick}
             >
               Contact Us
@@ -107,7 +107,7 @@ export default function Navbar() {
         {isMenuOpen && (
           <div 
             className="fixed top-0 left-0 w-full h-screen bg-white/95 backdrop-blur-sm md:hidden transform transition-transform duration-300 ease-in-out"
-            style={{ marginTop: '64px' }} // This accounts for the navbar height
+            style={{ marginTop: '64px' }}
           >
             <div className="flex flex-col items-center justify-start h-full pt-8 animate-slideDown">
               <Link

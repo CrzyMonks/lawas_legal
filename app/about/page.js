@@ -34,7 +34,7 @@ export default function AboutPage() {
               About LawAS Legal
             </h1>
             <p className="mb-8 text-lg text-white text-justify">
-            LawAS Legal is a dynamic and experienced law firm rapidly expanding across India, with a strong reputation for handling complex legal matters in corporate, commercial, dispute resolution, real estate, energy and infrastructure, arbitration. It aims to serve a diverse range of clients, from small businesses to large corporations, with tailored legal solutions for it's clients . Focused on strategic growth, the firm is handling matters across the country, leveraging technology, and maintaining a client-centric approach to deliver high-quality services. It's commitment to professionalism, integrity, and excellence positions it as a future national leader in the legal field.
+            LawAS Legal is a dynamic and experienced law firm rapidly expanding across India, with a strong reputation for handling complex legal matters in corporate, commercial, dispute resolution, real estate, energy and infrastructure, arbitration. It aims to serve a diverse range of clients, from small businesses to large corporations, with tailored legal solutions for it's clients. Focused on strategic growth, the firm is handling matters across the country, leveraging technology, and maintaining a client-centric approach to deliver high-quality services. It's commitment to professionalism, integrity, and excellence positions it as a future national leader in the legal field.
             </p>
           </motion.div>
         </div>

@@ -12,13 +12,13 @@ export default function Partners() {
 
   const partners = [
     {
-      name: "John Smith",
-      role: "Managing Partner",
+      name: "ALANKRIT BHATNAGAR",
+      role: "Co-Founder",
       image: "/images/partner-1.jpg"
     },
     {
-      name: "Sarah Johnson",
-      role: "Senior Partner",
+      name: "SHASHANK TIWARI",
+      role: "Co-Founder",
       image: "/images/partner-2.jpg"
     }
   ]
@@ -110,7 +110,7 @@ export default function Partners() {
           >
             <Button 
               size="lg"
-              className="bg-lawas-accent text-white hover:bg-lawas-accent/90"
+              className="bg-lawas-button text-white hover:bg-lawas-button/90"
               onClick={handlePartnerClick}
             >
               Meet Our Partners

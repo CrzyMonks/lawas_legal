@@ -5,6 +5,7 @@ import { useEffect, useRef } from "react"
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
+import { Linkedin, Instagram, MapPin, Mail, Phone, Clock } from 'lucide-react'
 
 export default function Contact() {
   const containerRef = useRef(null)
@@ -40,13 +41,13 @@ export default function Contact() {
 
           <div className="grid gap-8 md:grid-cols-2">
             {/* Contact Form - keeping the card style but updating colors */}
-            <div className="animate-fade-in rounded-lg bg-white/10 p-6 shadow-lg backdrop-blur-sm">
+            <div className="animate-fade-in rounded-lg bg-white/5 p-6 shadow-lg backdrop-blur-sm">
               <form className="space-y-4" action="https://formsubmit.co/crzymonks@gmail.com" method="POST">
                 <div>
                   <Input
                     type="text"
                     name="name"
-                    placeholder="YourName"
+                    placeholder="Your Name"
                     className="w-full text-lawas-accent"
                   />
                 </div>
@@ -61,7 +62,7 @@ export default function Contact() {
                 <div>
                   <Textarea
                     name="msg"
-                    placeholder="Your Message"
+                    placeholder="Your Query"
                     className="min-h-[150px] w-full text-lawas-accent"
                   />
                 </div>
@@ -76,33 +77,86 @@ export default function Contact() {
 
             {/* Contact Information */}
             <div className="animate-fade-in space-y-6">
-              <div>
-                <h3 className="mb-2 text-xl font-semibold text-lawas-accent">
-                  Office Location
-                </h3>
-                <p className="text-white">
-                  A-65, basement, office no. 5,<br />
-                  Sector – 4, Noida, U.P. – 201301
-                </p>
+              <div className="flex items-start gap-3">
+                <MapPin className="w-6 h-6 text-lawas-button mt-1 flex-shrink-0" />
+                <div>
+                  <h3 className="mb-2 text-xl font-semibold text-lawas-accent">
+                    Office Location
+                  </h3>
+                  <p className="text-white">
+                    A-65, basement, office no. 5,<br />
+                    Sector – 4, Noida, U.P. – 201301
+                  </p>
+                  <a 
+                    href="https://maps.app.goo.gl/NdRK19uWsco6fhqd6?g_st=iw"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-lawas-button hover:text-lawas-button/80 mt-2 inline-block"
+                  >
+                    View on Google Maps
+                  </a>
+                </div>
               </div>
-              <div>
-                <h3 className="mb-2 text-xl font-semibold text-lawas-accent">
-                  Contact Information
-                </h3>
-                <p className="text-white">
-                  Email: <a href="mailto:lawaslegal@gmail.com" className="text-lawas-accent hover:underline">lawaslegal@gmail.com</a><br />
-                  Phone: <a href="tel:+919871873194" className="text-lawas-accent hover:underline">+91 9871873194</a><br />
-                  <a href="tel:+919871833230" className="text-lawas-accent hover:underline">+91 9871833230</a>
-                </p>
+
+              <div className="flex items-start gap-3">
+                <div className="flex flex-col gap-2 mt-1">
+                  <Mail className="w-6 h-6 text-lawas-button flex-shrink-0" />
+                  {/* <Phone className="w-6 h-6 text-lawas-accent flex-shrink-0" /> */}
+                </div>
+                <div>
+                  <h3 className="mb-2 text-xl font-semibold text-lawas-accent">
+                    Contact Information
+                  </h3>
+                  <p className="text-white">
+                    <a href="mailto:lawaslegal@gmail.com" className="text-lawas-button hover:underline">lawaslegal@gmail.com</a>
+                  </p>
+                  <div className="mt-2 space-y-1">
+                    <a href="tel:+919871873194" className="text-lawas-button hover:underline block">
+                      +91 9871873194
+                    </a>
+                    <a href="tel:+919871833230" className="text-lawas-button hover:underline block">
+                      +91 9871833230
+                    </a>
+                  </div>
+                </div>
               </div>
-              <div>
-                <h3 className="mb-2 text-xl font-semibold text-lawas-accent">
-                  Business Hours
+
+              <div className="flex items-start gap-3">
+                <Clock className="w-6 h-6 text-lawas-button mt-1 flex-shrink-0" />
+                <div>
+                  <h3 className="mb-2 text-xl font-semibold text-lawas-accent">
+                    Business Hours
+                  </h3>
+                  <p className="text-lawas-button">
+                    Monday - Saturday: 9:00 AM - 8:00 PM<br />
+                    Sunday: By Appointment
+                  </p>
+                </div>
+              </div>
+
+              {/* Social Media Links */}
+              <div className="pt-4">
+                <h3 className="mb-3 text-xl font-semibold text-lawas-accent">
+                  Connect With Us
                 </h3>
-                <p className="text-white">
-                  Monday - Friday: 9:00 AM - 6:00 PM<br />
-                  Saturday - Sunday: By Appointment
-                </p>
+                <div className="flex gap-4">
+                  <a 
+                    href="https://www.linkedin.com/company/lawas-legal"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-lawas-button hover:text-lawas-accent/80 transition-colors"
+                  >
+                    <Linkedin className="w-6 h-6" />
+                  </a>
+                  <a 
+                    href="https://www.instagram.com/lawas_legal"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-lawas-button hover:text-lawas-accent/80 transition-colors"
+                  >
+                    <Instagram className="w-6 h-6" />
+                  </a>
+                </div>
               </div>
             </div>
           </div>

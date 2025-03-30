@@ -10,14 +10,14 @@ module.exports = {
   	extend: {
   		colors: {
   			// Law firm custom colors
-  			lawas: {
-  				heading: '#1A2B4B',  // Deep navy blue for headings
-  				body: '#2C3E50',     // Rich slate for body text
-  				button: '#0F4C81',   // Professional blue for buttons
-  				accent: '#C8A977',   // Gold accent color
-  				light: '#F8F9FA',    // Light background
-  				muted: '#E9ECEF',    // Muted background sections
-  			},
+  			// lawas: {
+  			// 	heading: '#1A2B4B',  // Deep navy blue for headings
+  			// 	body: '#2C3E50',     // Rich slate for body text
+  			// 	button: '#0F4C81',   // Professional blue for buttons
+  			// 	accent: '#C8A977',   // Gold accent color
+  			// 	light: '#F8F9FA',    // Light background
+  			// 	muted: '#E9ECEF',    // Muted background sections
+  			// },
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {
@@ -57,7 +57,16 @@ module.exports = {
   				'3': 'hsl(var(--chart-3))',
   				'4': 'hsl(var(--chart-4))',
   				'5': 'hsl(var(--chart-5))'
-  			}
+  			},
+  			lawas: {
+  				heading: '#1B2141',    // Deep navy blue for background
+  				body: '#2C3E50',       // Rich slate for body text
+  				button: '#C8A977',     // Golden color for buttons (restored)
+  				accent: '#FFFFFF',     // White for headings/text
+  				light: '#F8F9FA',      // Light background
+  				muted: '#E9ECEF',      // Muted background
+  				overlay: '#1B2141/90', // Navy blue with opacity
+  			},
   		},
   		borderRadius: {
   			lg: 'var(--radius)',
