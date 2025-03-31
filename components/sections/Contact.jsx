@@ -5,7 +5,7 @@ import { useEffect, useRef } from "react"
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
-import { Linkedin, Instagram, MapPin, Mail, Phone, Clock } from 'lucide-react'
+import { Linkedin, Instagram, MapPin, Mail, Phone, Clock, User } from 'lucide-react'
 
 export default function Contact() {
   const containerRef = useRef(null)
@@ -135,27 +135,30 @@ export default function Contact() {
               </div>
 
               {/* Social Media Links */}
-              <div className="pt-4">
-                <h3 className="mb-3 text-xl font-semibold text-lawas-accent">
-                  Connect With Us
-                </h3>
-                <div className="flex gap-4">
-                  <a 
-                    href="https://www.linkedin.com/company/lawas-legal"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-lawas-button hover:text-lawas-accent/80 transition-colors"
-                  >
-                    <Linkedin className="w-6 h-6" />
-                  </a>
-                  <a 
-                    href="https://www.instagram.com/lawas_legal"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-lawas-button hover:text-lawas-accent/80 transition-colors"
-                  >
-                    <Instagram className="w-6 h-6" />
-                  </a>
+              <div className="flex items-start gap-3">
+                <User className="w-6 h-6 text-lawas-button mt-1 flex-shrink-0" />
+                <div>
+                  <h3 className="mb-3 text-xl font-semibold text-lawas-accent">
+                    Connect With Us
+                  </h3>
+                  <div className="flex gap-4">
+                    <a 
+                      href="https://www.linkedin.com/company/lawas-legal"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-lawas-button hover:text-lawas-accent/80 transition-colors"
+                    >
+                      <Linkedin className="w-6 h-6" />
+                    </a>
+                    <a 
+                      href="https://www.instagram.com/lawas_legal"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-lawas-button hover:text-lawas-accent/80 transition-colors"
+                    >
+                      <Instagram className="w-6 h-6" />
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
