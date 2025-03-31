@@ -60,12 +60,10 @@ export default function PracticeAreasPreview() {
     }
   ]
 
-  // Function to handle navigation to all practice areas
   const handleViewMore = () => {
     router.push('/practice-areas')
   }
 
-  // Function to navigate to a specific practice area
   const navigateToArea = (id) => {
     router.push(`/practice-areas#${id}`)
   }

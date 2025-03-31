@@ -1,14 +1,43 @@
 'use client'
 
 import { animate, stagger } from "motion"
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
-import { Linkedin, Instagram, MapPin, Mail, Phone, Clock } from 'lucide-react'
+import { Linkedin, Instagram, MapPin, Mail, Phone, Clock, CheckCircle } from 'lucide-react'
+import emailjs from '@emailjs/browser';
 
 export default function Contact() {
   const containerRef = useRef(null)
+  const form = useRef();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showSuccess, setShowSuccess] = useState(false);
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    emailjs
+      .sendForm('service_q2g6p5a', 'template_23pem55', form.current, {
+        publicKey: 'KL0IZBv3seh4BC5q2',
+      })
+      .then(
+        () => {
+          console.log('SUCCESS!');
+          form.current.reset();
+          setShowSuccess(true);
+          setIsSubmitting(false);
+          setTimeout(() => {
+            setShowSuccess(false);
+          }, 5000);
+        },
+        (error) => {
+          console.log('FAILED...', error.text);
+          setIsSubmitting(false);
+        },
+      );
+  };
 
   useEffect(() => {
     if (containerRef.current) {
@@ -40,42 +69,54 @@ export default function Contact() {
           </div>
 
           <div className="grid gap-8 md:grid-cols-2">
-            {/* Contact Form - keeping the card style but updating colors */}
             <div className="animate-fade-in rounded-lg bg-white/5 p-6 shadow-lg backdrop-blur-sm">
-              <form className="space-y-4" action="https://formsubmit.co/crzymonks@gmail.com" method="POST">
-                <div>
-                  <Input
-                    type="text"
-                    name="name"
-                    placeholder="Your Name"
-                    className="w-full text-lawas-accent"
-                  />
+              {showSuccess ? (
+                <div className="flex flex-col items-center justify-center h-full py-8 text-center">
+                  <CheckCircle className="w-16 h-16 text-green-500 mb-4" />
+                  <h3 className="text-xl font-semibold text-lawas-accent mb-2">Message Sent Successfully!</h3>
+                  <p className="text-white">
+                    Thank you for reaching out. Our team will get back to you shortly.
+                  </p>
                 </div>
-                <div>
-                  <Input
-                    type="email"
-                    name="email"
-                    placeholder="Your Email"
-                    className="w-full text-lawas-accent"
-                  />
-                </div>
-                <div>
-                  <Textarea
-                    name="msg"
-                    placeholder="Your Query"
-                    className="min-h-[150px] w-full text-lawas-accent"
-                  />
-                </div>
-                <Button 
-                  type="submit"
-                  className="w-full bg-lawas-button text-white hover:bg-lawas-button/90"
-                >
-                  Send Message
-                </Button>
-              </form>
+              ) : (
+                <form className="space-y-4" ref={form} onSubmit={sendEmail}>
+                  <div>
+                    <Input
+                      type="text"
+                      name="name"
+                      placeholder="Your Name"
+                      className="w-full text-lawas-accent"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <Input
+                      type="email"
+                      name="email"
+                      placeholder="Your Email"
+                      className="w-full text-lawas-accent"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <Textarea
+                      name="message"
+                      placeholder="Your Query"
+                      className="min-h-[150px] w-full text-lawas-accent"
+                      required
+                    />
+                  </div>
+                  <Button 
+                    type="submit"
+                    className="w-full bg-lawas-button text-white hover:bg-lawas-button/90"
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? 'Sending...' : 'Send Message'}
+                  </Button>
+                </form>
+              )}
             </div>
 
-            {/* Contact Information */}
             <div className="animate-fade-in space-y-6">
               <div className="flex items-start gap-3">
                 <MapPin className="w-6 h-6 text-lawas-button mt-1 flex-shrink-0" />
@@ -134,7 +175,6 @@ export default function Contact() {
                 </div>
               </div>
 
-              {/* Social Media Links */}
               <div className="pt-4">
                 <h3 className="mb-3 text-xl font-semibold text-lawas-accent">
                   Connect With Us
@@ -164,4 +204,4 @@ export default function Contact() {
       </div>
     </section>
   )
-} 
+}
