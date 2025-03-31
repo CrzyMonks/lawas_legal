@@ -41,7 +41,7 @@ export default function AboutPreview() {
           
           <div className="relative flex justify-center">
             <motion.p 
-              className="mb-12 text-xl text-white px-8 text-center max-w-3xl leading-relaxed"
+              className="mb-12 text-lg text-white px-8 text-center max-w-3xl leading-relaxed"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
@@ -60,7 +60,7 @@ export default function AboutPreview() {
             <Link href="/about">
               <Button 
                 size="lg"
-                className="bg-lawas-button text-white hover:bg-lawas-button/90 text-lg px-8 py-6"
+                className="bg-lawas-button text-white hover:bg-lawas-button/90 px-8 py-6"
               >
                 Learn More About Us
               </Button>
