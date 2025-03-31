@@ -3,6 +3,8 @@ import "./globals.css"
 import { cn } from "@/lib/utils"
 import Navbar from "@/components/Navbar"
 import Disclaimer from '@/components/Disclaimer'
+import { SpeedInsights } from "@vercel/speed-insights/next"
+import { Analytics } from "@vercel/analytics/react"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -26,6 +28,8 @@ export default function RootLayout({ children }) {
         <Disclaimer />
         <Navbar />
         <main className="relative flex min-h-screen flex-col pt-16">
+          <Analytics/>
+          <SpeedInsights/>
           {children}
         </main>
       </body>
