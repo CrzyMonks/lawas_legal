@@ -6,7 +6,6 @@ import { animate, motion, stagger } from "motion/react"
 import { useEffect, useRef, useState } from "react"
 
 export default function Hero() {
-  // const [isImageLoaded, setIsImageLoaded] = useState(false)
   const [isVideoLoaded, setIsVideoLoaded] = useState(false)
   const containerRef = useRef(null)
   
@@ -35,17 +34,6 @@ export default function Hero() {
 
   return (
     <section className="relative h-screen w-full bg-lawas-heading">
-      {/* Background with overlay */}
-      {/* <div className={`absolute inset-0 bg-gradient-to-b from-lawas-heading to-lawas-heading/95 transition-opacity duration-500 ${isImageLoaded ? 'opacity-100' : 'opacity-0'}`}>
-        <Image
-          src="/images/lawas_bg.jpg"
-          alt="Legal office background"
-          fill
-          className="object-cover opacity-20"
-          loading="lazy"
-          onLoad={() => setIsImageLoaded(true)}
-        />
-      </div> */}
       <div className={`absolute inset-0 transition-opacity duration-500`}>
         <video 
           preload="auto"
@@ -64,7 +52,6 @@ export default function Hero() {
         <div className="absolute inset-0 bg-lawas-heading/70" />
       </div>
 
-      {/* Content */}
       <div 
         ref={containerRef}
         className="relative z-10 flex h-full items-center justify-center px-4 sm:px-6 lg:px-8"

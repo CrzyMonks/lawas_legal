@@ -33,7 +33,6 @@ export default function Partners() {
   const handlePartnerClick = (e) => {
     e.preventDefault()
     
-    // Navigate to about page and scroll to partners section
     router.push('/about')
     setTimeout(() => {
       const partnersSection = document.getElementById('partners-section')
