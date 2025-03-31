@@ -8,13 +8,13 @@ export default function AboutPage() {
     {
       name: "ALANKRIT BHATNAGAR",
       role: "Co-Founder",
-      image: "/images/partner-1.jpg",
+      image: "/images/ALANKRIT.jpg",
       bio: "Alankrit, Co-Founder of LawAS Legal, is a seasoned lawyer with expertise in Civil and Commercial Litigation, Arbitration, Insolvency & Bankruptcy, and Real Estate laws. With a proven track record of representing multinational corporations (MNCs) and individuals in high-stakes matters, he has successfully argued cases before the Supreme Court of India, various High Courts, District Courts, and specialized tribunals across the country. Alankrit has adeptly handled complex recovery suits, cases under the Negotiable Instruments Act, and legal matters involving homebuyers. He also provides strategic legal counsel to corporations, ensuring seamless contract execution and compliance, thereby mitigating business risks. A skilled litigator and strategist, Alankrit regularly appears before courts and tribunals, crafting effective legal approaches for corporate clients. His expertise extends to drafting petitions, agreements, and legal opinions, making him a trusted advisor in the legal landscape."
     },
     {
       name: "SHASHANK TIWARI",
       role: "Co-Founder",
-      image: "/images/partner-2.jpg",
+      image: "/images/SHASHANK.jpg",
       bio: "Shashank, Co-Founder of LawAS Legal, is a distinguished lawyer with extensive expertise in arbitration, infrastructure projects, intellectual property, and technology law. He has successfully represented clients at all court levels, including the Supreme Court of India, handling complex legal matters with precision, strategic insight, and a strong focus on achieving favourable outcomes for his clients. Shashank’s proficiency spans domestic and international arbitration, large-scale infrastructure advisory, IP protection, licensing, and enforcement. He also provides expert legal guidance on emerging technologies, data protection, cybersecurity, helping clients navigate the rapidly evolving legal landscape. Known for his strategic approach, meticulous legal analysis, and deep industry knowledge, Shashank consistently delivers successful outcomes across diverse sectors. His ability to craft innovative legal strategies and offer practical solutions has earned him a reputation as a trusted legal advisor for businesses and individuals."
     }
   ]

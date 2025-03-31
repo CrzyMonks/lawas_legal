@@ -70,7 +70,7 @@ export default function Contact() {
 
           <div className="grid gap-8 md:grid-cols-2">
             <div className="animate-fade-in rounded-lg bg-white/5 p-6 shadow-lg backdrop-blur-sm">
-              <h3 className="text-lg md:text-lg font-bold text-white mb-6 text-center uppercase tracking-wider bg-white/10 py-4 px-6 rounded-lg shadow-lg backdrop-blur-sm border-2 border-yellow-500/20 transform hover:scale-105 transition-transform duration-300">Get Free Legal Consultation</h3>
+              <h3 className="text-lg md:text-lg font-bold text-lawas-accent mb-6 text-center uppercase tracking-wider bg-white/10 py-4 px-6 rounded-lg shadow-lg backdrop-blur-sm border-2 border-yellow-500/20 transform hover:scale-105 transition-transform duration-300">Get Free Legal Consultation</h3>
               {showSuccess ? (
                 <div className="flex flex-col items-center justify-center h-full py-8 text-center">
                   <CheckCircle className="w-16 h-16 text-green-500 mb-4" />

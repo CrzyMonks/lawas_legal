@@ -59,7 +59,7 @@ export default function Testimonials() {
   }, [api])
 
   return (
-    <section className="bg-lawas-background py-24">
+    <section className="bg-white py-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
           className="text-center mb-16"
