@@ -31,6 +31,12 @@ const testimonials = [
     name: "Suvomoy Banerjee",
     // company: "",
     role: "Client"
+  },
+  {
+    text: "Advocate Alankrit is highly knowledgeable and consistently offers clear, practical advice. His punctuality and preparation are impressive, and his bold, confident approach in arguments sets him apart. I would strongly recommend him to anyone seeking a dedicated legal professional.",
+    name: "Umesh Sharma",
+    // company: "",
+    role: "Client"
   }
 ]
 

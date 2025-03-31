@@ -7,10 +7,10 @@ import {
   Scale, 
   GavelIcon, 
   FileSymlink, 
-  ShieldAlert, 
   BadgeAlert, 
-  Banknote 
+  Banknote,
 } from 'lucide-react'
+import Image from 'next/image'
 
 export default function PracticeAreasPreview() {
   const router = useRouter()
@@ -43,19 +43,22 @@ export default function PracticeAreasPreview() {
     {
       title: "Consumer Law",
       description: "Defending consumer rights with legal expertise",
-      icon: ShieldAlert,
+      icon: 'custom',
+      iconPath: '/images/consumer.png',
       id: "consumer-law"
     },
     {
       title: "Criminal Law",
       description: "Trusted defense for criminal cases",
-      icon: BadgeAlert,
+      icon: 'custom',
+      iconPath: '/images/handchain-removebg-preview.png',
       id: "criminal-law"
     },
     {
       title: "Debt Recovery & SARFAESI Act",
       description: "Effective legal solutions for debt enforcement",
-      icon: Banknote,
+      icon: 'custom',
+      iconPath: '/images/money-removebg-preview.png',
       id: "debt-recovery"
     }
   ]
@@ -102,7 +105,19 @@ export default function PracticeAreasPreview() {
               onClick={() => navigateToArea(area.id)}
             >
               <div className="mb-4 p-3 rounded-full bg-lawas-button/20">
-                <area.icon className="w-8 h-8 text-lawas-button" />
+                {area.icon === 'custom' ? (
+                  <Image 
+                    src={area.iconPath}
+                    alt={area.title}
+                    width={area.id === 'criminal-law' || area.id === 'debt-recovery' ? 56 : 46}
+                    height={area.id === 'criminal-law' || area.id === 'debt-recovery' ? 56 : 46}
+                    className={`text-lawas-button object-cover rounded-full ${
+                      area.id === 'criminal-law' || area.id === 'debt-recovery' ? 'p-0.5' : 'p-1'
+                    }`}
+                  />
+                ) : (
+                  <area.icon className="w-8 h-8 text-lawas-button" />
+                )}
               </div>
               <h3 className="text-xl font-semibold text-lawas-heading mb-2">
                 {area.title}

@@ -14,12 +14,12 @@ export default function Partners() {
     {
       name: "ALANKRIT BHATNAGAR",
       role: "Co-Founder",
-      image: "/images/partner-1.jpg"
+      image: "/images/ALANKRIT-removebg-preview.png"
     },
     {
       name: "SHASHANK TIWARI",
       role: "Co-Founder",
-      image: "/images/partner-2.jpg"
+      image: "/images/SHASHANK-removebg-preview.png"
     }
   ]
 

@@ -45,9 +45,9 @@ export default function Navbar() {
             <Image
               src="/images/legal-logo-removebg-preview.png"
               alt="LawAS Legal Logo"
-              width={500}
-              height={500}
-              className="h-12 w-auto"
+              width={800}
+              height={800}
+              className="h-16 w-auto"
               priority
             />
           </Link>
