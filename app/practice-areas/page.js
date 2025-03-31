@@ -11,6 +11,7 @@ import {
   BadgeAlert, 
   Banknote 
 } from 'lucide-react'
+import Image from 'next/image'
 
 export default function PracticeAreasPage() {
   useScrollToHash()
@@ -77,7 +78,8 @@ export default function PracticeAreasPage() {
     {
       id: "consumer-law",
       title: "Consumer Law",
-      icon: ShieldAlert,
+      icon: 'custom',
+      iconPath: '/images/consumer.png',
       description: "Under the Consumer Protection Act, 2019, we provide comprehensive legal assistance in consumer protection matters. Our expertise covers consumer dispute resolution through Consumer Forums at District, State, and National levels.",
       services: [
         "Drafting legal instruments and terms of service",
@@ -88,7 +90,8 @@ export default function PracticeAreasPage() {
     {
       id: "criminal-law",
       title: "Criminal Law",
-      icon: BadgeAlert,
+      icon: 'custom',
+      iconPath: '/images/handchain-removebg-preview.png',
       description: "We provide comprehensive legal representation in all aspects of criminal litigation, handling matters before Executive and Judicial Magistrates, addressing law and order issues and trials for offenses under penal laws.",
       services: [
         "Regular Bail and Anticipatory Bail",
@@ -100,7 +103,8 @@ export default function PracticeAreasPage() {
     {
       id: "debt-recovery",
       title: "Debt Recovery & SARFAESI Act",
-      icon: Banknote,
+      icon: 'custom',
+      iconPath: '/images/money-removebg-preview.png',
       description: "We specialize in banking and debt recovery laws under the SARFAESI Act, 2002, assisting cooperative and commercial banks in efficient debt recovery processes.",
       services: [
         "Representation before Debt Recovery Tribunal (DRT)",
@@ -149,8 +153,21 @@ export default function PracticeAreasPage() {
                 viewport={{ once: true }}
               >
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="p-3 rounded-full bg-lawas-button/20">
-                    {area.icon && <area.icon className="w-8 h-8 text-lawas-button" />}
+                  <div className="p-2 rounded-full bg-lawas-button/20">
+                    {area.icon === 'custom' ? (
+                      <div className="relative w-[40px] h-[40px] rounded-full overflow-hidden">
+                        <Image 
+                          src={area.iconPath}
+                          alt={area.title}
+                          fill
+                          className={`text-lawas-button object-cover ${
+                            area.id === 'criminal-law' || area.id === 'debt-recovery' ? 'p-0.5' : 'p-1'
+                          }`}
+                        />
+                      </div>
+                    ) : (
+                      <area.icon className="w-8 h-8 text-lawas-button" />
+                    )}
                   </div>
                   <h2 className="text-2xl font-bold text-lawas-heading">
                     {area.title}

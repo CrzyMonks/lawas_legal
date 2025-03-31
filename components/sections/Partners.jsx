@@ -14,12 +14,12 @@ export default function Partners() {
     {
       name: "ALANKRIT BHATNAGAR",
       role: "Co-Founder",
-      image: "/images/ALANKRIT-removebg-preview.png"
+      image: "/images/ALANKRIT.jpg"
     },
     {
       name: "SHASHANK TIWARI",
       role: "Co-Founder",
-      image: "/images/SHASHANK-removebg-preview.png"
+      image: "/images/SHASHANK.jpg"
     }
   ]
 
@@ -59,8 +59,20 @@ export default function Partners() {
   }, [])
 
   return (
-    <section className="bg-lawas-background py-24">
-      <div ref={containerRef} className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative py-24">
+      {/* Background Image */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/images/background.jpeg"
+          alt="Background"
+          fill
+          className="object-cover"
+          priority
+        />
+      </div>
+
+      {/* Content with relative positioning and higher z-index */}
+      <div ref={containerRef} className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
           className="text-center"
           initial={{ opacity: 0, y: 20 }}
@@ -94,7 +106,7 @@ export default function Partners() {
                 <h3 className="mb-2 text-2xl font-semibold text-black">
                   {partner.name}
                 </h3>
-                <p className="text-lg text-black">
+                <p className="text-lg text-black/80">
                   {partner.role}
                 </p>
               </div>

@@ -104,17 +104,18 @@ export default function PracticeAreasPreview() {
               viewport={{ once: true }}
               onClick={() => navigateToArea(area.id)}
             >
-              <div className="mb-4 p-3 rounded-full bg-lawas-button/20">
+              <div className="mb-4 p-2 rounded-full bg-lawas-button/20">
                 {area.icon === 'custom' ? (
-                  <Image 
-                    src={area.iconPath}
-                    alt={area.title}
-                    width={area.id === 'criminal-law' || area.id === 'debt-recovery' ? 56 : 46}
-                    height={area.id === 'criminal-law' || area.id === 'debt-recovery' ? 56 : 46}
-                    className={`text-lawas-button object-cover rounded-full ${
-                      area.id === 'criminal-law' || area.id === 'debt-recovery' ? 'p-0.5' : 'p-1'
-                    }`}
-                  />
+                  <div className="relative w-[40px] h-[40px] rounded-full overflow-hidden">
+                    <Image 
+                      src={area.iconPath}
+                      alt={area.title}
+                      fill
+                      className={`text-lawas-button object-cover ${
+                        area.id === 'criminal-law' || area.id === 'debt-recovery' ? 'p-0.5' : 'p-1'
+                      }`}
+                    />
+                  </div>
                 ) : (
                   <area.icon className="w-8 h-8 text-lawas-button" />
                 )}
