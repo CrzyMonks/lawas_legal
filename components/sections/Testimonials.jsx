@@ -15,22 +15,22 @@ import { ChevronLeft, ChevronRight } from "lucide-react"
 
 const testimonials = [
   {
-    text: "LawAS Legal provided exceptional legal support for our business. Their expertise in commercial law and attention to detail made complex legal matters manageable. Highly recommended for any corporate legal needs.",
-    name: "Rajesh Kumar",
-    company: "Tech Innovations Pvt. Ltd.",
-    role: "CEO"
+    text: "LawAS Legal offers top-notch legal services with a structured, client-focused approach. I am honored to be associated with such a committed and esteemed legal team.",
+    name: "Ajay Kumar Thakur",
+    // company: "",
+    role: "Client"
   },
   {
-    text: "Working with LawAS Legal has been a game-changer for our company. Their proactive approach and deep understanding of corporate law helped us navigate challenging situations with confidence.",
-    name: "Priya Sharma",
-    company: "Global Solutions India",
-    role: "Managing Director"
+    text: "Mr. Bhatnagar's legal guidance has always been crystal clear, with valuable step-by-step advice tailored to each case. His clarity and insight make every legal process smooth and understandable.",
+    name: "Jagdishbhai Chaudhary",
+    // company: "",
+    role: "Client"
   },
   {
-    text: "The team at LawAS Legal demonstrates exceptional professionalism and expertise. Their strategic guidance has been invaluable for our business operations and legal compliance.",
-    name: "Amit Patel",
-    company: "Sunrise Industries",
-    role: "Legal Head"
+    text: "I'm grateful to have chosen Mr. Alankrit and his team—highly professional, empathetic, and genuinely committed to their clients. Their integrity and approachability make them truly stand out.",
+    name: "Suvomoy Banerjee",
+    // company: "",
+    role: "Client"
   }
 ]
 
@@ -88,7 +88,7 @@ export default function Testimonials() {
                         <div className="relative">
                           <div className="absolute -top-2 -left-2">
                             <Image
-                              src="/images/double-quotes.png"
+                              src="/images/quotes.png"
                               alt="quotes"
                               width={24}
                               height={24}
@@ -104,7 +104,7 @@ export default function Testimonials() {
                                 {testimonial.name}
                               </p>
                               <p className="text-sm text-lawas-body">
-                                {testimonial.role}, {testimonial.company}
+                                {testimonial.role}
                               </p>
                             </div>
                           </div>

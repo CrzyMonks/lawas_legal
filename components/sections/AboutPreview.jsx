@@ -47,7 +47,7 @@ export default function AboutPreview() {
               transition={{ duration: 0.8, delay: 0.4 }}
               viewport={{ once: true }}
             >
-              LawAS Legal is a dynamic and experienced law firm rapidly expanding across India, with a strong reputation for handling complex legal matters in corporate, commercial, dispute resolution, real estate, energy and infrastructure, arbitration.
+              At LawAS Legal, we are a dynamic and client-focused law firm based in Delhi, serving a diverse clientele across India. Our team brings deep expertise in handling complex legal matters spanning corporate and commercial law, dispute resolution, real estate, energy, infrastructure, and arbitration.
             </motion.p>
           </div>
           

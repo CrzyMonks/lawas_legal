@@ -45,8 +45,8 @@ export default function Navbar() {
             <Image
               src="/images/legal-logo-removebg-preview.png"
               alt="LawAS Legal Logo"
-              width={200}
-              height={133}
+              width={500}
+              height={500}
               className="h-12 w-auto"
               priority
             />
@@ -112,27 +112,39 @@ export default function Navbar() {
             <div className="flex flex-col items-center justify-start h-full pt-8 animate-slideDown">
               <Link
                 href="/"
-                className={`block w-full px-3 py-4 text-lg text-center ${pathname === '/' ? 'text-lawas-heading font-semibold' : 'text-lawas-body'} hover:text-lawas-heading`}
+                className={`block w-full px-3 py-4 text-lg text-center 
+                  ${pathname === '/' 
+                    ? 'text-lawas-heading font-semibold bg-lawas-button/10 border-l-4 border-lawas-button' 
+                    : 'text-lawas-body'
+                  } hover:text-lawas-heading transition-all duration-200`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 Home
               </Link>
               <Link
                 href="/about"
-                className={`block w-full px-3 py-4 text-lg text-center ${pathname === '/about' ? 'text-lawas-heading font-semibold' : 'text-lawas-body'} hover:text-lawas-heading`}
+                className={`block w-full px-3 py-4 text-lg text-center 
+                  ${pathname === '/about' 
+                    ? 'text-lawas-heading font-semibold bg-lawas-button/10 border-l-4 border-lawas-button' 
+                    : 'text-lawas-body'
+                  } hover:text-lawas-heading transition-all duration-200`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 About
               </Link>
               <Link
                 href="/practice-areas"
-                className={`block w-full px-3 py-4 text-lg text-center ${pathname === '/practice-areas' ? 'text-lawas-heading font-semibold' : 'text-lawas-body'} hover:text-lawas-heading`}
+                className={`block w-full px-3 py-4 text-lg text-center 
+                  ${pathname === '/practice-areas' 
+                    ? 'text-lawas-heading font-semibold bg-lawas-button/10 border-l-4 border-lawas-button' 
+                    : 'text-lawas-body'
+                  } hover:text-lawas-heading transition-all duration-200`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 Practice Areas
               </Link>
               <button
-                className="block w-full px-3 py-4 text-lg text-center text-lawas-body hover:text-lawas-heading"
+                className="block w-full px-3 py-4 text-lg text-center text-lawas-body hover:text-lawas-heading transition-all duration-200"
                 onClick={handleContactClick}
               >
                 Contact Us

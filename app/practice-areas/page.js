@@ -2,6 +2,15 @@
 import { motion } from "motion/react"
 import { useScrollToHash } from '@/app/utils/useScrollToHash'
 import { useState, useEffect } from 'react'
+import { 
+  Building2, 
+  Scale, 
+  GavelIcon, 
+  FileSymlink, 
+  ShieldAlert, 
+  BadgeAlert, 
+  Banknote 
+} from 'lucide-react'
 
 export default function PracticeAreasPage() {
   useScrollToHash()
@@ -27,6 +36,7 @@ export default function PracticeAreasPage() {
     {
       id: "commercial-law",
       title: "Commercial Law",
+      icon: Building2,
       description: "Our firm specializes in Commercial Law, offering comprehensive legal services for businesses, firms, and individuals. With the enactment of the Commercial Courts Act, 2015, commercial disputes are now adjudicated through a specialized and efficient mechanism.",
       services: [
         "Litigation before Commercial Courts, High Courts, and the Supreme Court of India",
@@ -38,6 +48,7 @@ export default function PracticeAreasPage() {
     {
       id: "company-law",
       title: "Company Law",
+      icon: Scale,
       description: "The Companies Act, 1956 & 2013, regulated by the Ministry of Corporate Affairs, governs the formation and operations of companies in India. Compliance with statutory regulations is mandatory.",
       services: [
         "Drafting policies, contracts, and corporate governance documents",
@@ -48,12 +59,14 @@ export default function PracticeAreasPage() {
     {
       id: "litigation",
       title: "Litigation",
+      icon: GavelIcon,
       description: "LawAS Legal has a renowned litigation practice, providing strategic legal solutions across diverse practice areas. Our legal team has extensive experience advocating for clients at all judicial levels, including the Supreme Court of India, various High Courts, district and subordinate courts, Tribunals, and specialized quasi-judicial bodies.",
       services: []
     },
     {
       id: "arbitration",
       title: "Arbitration and Dispute Resolution",
+      icon: FileSymlink,
       description: "Arbitration is an efficient and expedited mechanism for resolving disputes. LawAS Legal provides comprehensive legal support in arbitration matters, including advisory services on dispute resolution, contract execution, and legal documentation.",
       services: [
         "Drafting arbitration agreements and pleadings",
@@ -64,6 +77,7 @@ export default function PracticeAreasPage() {
     {
       id: "consumer-law",
       title: "Consumer Law",
+      icon: ShieldAlert,
       description: "Under the Consumer Protection Act, 2019, we provide comprehensive legal assistance in consumer protection matters. Our expertise covers consumer dispute resolution through Consumer Forums at District, State, and National levels.",
       services: [
         "Drafting legal instruments and terms of service",
@@ -74,6 +88,7 @@ export default function PracticeAreasPage() {
     {
       id: "criminal-law",
       title: "Criminal Law",
+      icon: BadgeAlert,
       description: "We provide comprehensive legal representation in all aspects of criminal litigation, handling matters before Executive and Judicial Magistrates, addressing law and order issues and trials for offenses under penal laws.",
       services: [
         "Regular Bail and Anticipatory Bail",
@@ -85,6 +100,7 @@ export default function PracticeAreasPage() {
     {
       id: "debt-recovery",
       title: "Debt Recovery & SARFAESI Act",
+      icon: Banknote,
       description: "We specialize in banking and debt recovery laws under the SARFAESI Act, 2002, assisting cooperative and commercial banks in efficient debt recovery processes.",
       services: [
         "Representation before Debt Recovery Tribunal (DRT)",
@@ -132,9 +148,14 @@ export default function PracticeAreasPage() {
                 transition={{ duration: 0.8, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <h2 className="mb-4 text-2xl font-bold text-lawas-heading">
-                  {area.title}
-                </h2>
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="p-3 rounded-full bg-lawas-button/20">
+                    {area.icon && <area.icon className="w-8 h-8 text-lawas-button" />}
+                  </div>
+                  <h2 className="text-2xl font-bold text-lawas-heading">
+                    {area.title}
+                  </h2>
+                </div>
                 <p className="mb-6 text-lawas-body">
                   {area.description}
                 </p>
