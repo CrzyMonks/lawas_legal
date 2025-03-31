@@ -2,11 +2,26 @@
 import { motion } from "motion/react"
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function AboutPreview() {
   return (
-    <section id="about-preview" className="bg-lawas-heading min-h-screen flex items-center">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <section id="about-preview" className="lawas-overlay min-h-screen flex items-center relative">
+      {/* Background Image */}
+      <div className="absolute inset-0 w-full h-full">
+        <Image
+          src="/images/lawas_bg.jpg"
+          alt="Law Office Background"
+          fill
+          className="object-cover"
+          priority
+        />
+        {/* Light overlay */}
+        <div className="absolute inset-0 bg-lawas-contact/70" />
+      </div>
+
+      {/* Content */}
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
         <motion.div 
           className="mx-auto max-w-3xl text-center"
           initial={{ opacity: 0, y: 20 }}
@@ -15,7 +30,7 @@ export default function AboutPreview() {
           viewport={{ once: true }}
         >
           <motion.h2 
-            className="mb-8 text-4xl font-bold text-lawas-accent sm:text-5xl lg:text-6xl"
+            className="mb-8 text-4xl font-bold text-white sm:text-5xl lg:text-6xl"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -26,7 +41,7 @@ export default function AboutPreview() {
           
           <div className="relative flex justify-center">
             <motion.p 
-              className="mb-12 text-xl text-lawas-accent/70 px-8 text-center max-w-3xl leading-relaxed"
+              className="mb-12 text-xl text-white px-8 text-center max-w-3xl leading-relaxed"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}

@@ -18,43 +18,43 @@ export default function PracticeAreasPreview() {
   const practiceAreas = [
     {
       title: "Commercial Law",
-      description: "Comprehensive legal services for businesses and commercial transactions",
+      description: "Legal support for business and commercial transactions",
       icon: Building2,
       id: "commercial-law"
     },
     {
       title: "Company Law",
-      description: "Expert guidance in corporate governance and compliance",
+      description: "Guidance on corporate laws and regulations",
       icon: Scale,
       id: "company-law"
     },
     {
       title: "Litigation",
-      description: "We deliver expert litigation services, focusing on dispute resolution and court representation.",
+      description: "Expert legal representation in court disputes ",
       icon: GavelIcon,
       id: "litigation"
     },
     {
       title: "Arbitration and Dispute Resolution",
-      description: "Pioneering arbitration and dispute resolution with tailored legal strategies",
+      description: "Professional resolution of conflicts outside court",
       icon: FileSymlink,
       id: "arbitration"
     },
     {
       title: "Consumer Law",
-      description: "Advocating for consumer rights with expert legal solutions and enforcement.",
+      description: "Defending consumer rights with legal expertise",
       icon: ShieldAlert,
       id: "consumer-law"
     },
     {
       title: "Criminal Law",
-      description: "Expert criminal law services focusing on defense, advocacy, and justice",
+      description: "Trusted defense for criminal cases",
       icon: BadgeAlert,
       id: "criminal-law"
     },
     {
       title: "Debt Recovery & SARFAESI Act",
-      description: "Enforcing creditor rights with expert debt recovery and SARFAESI Act support",
+      description: "Effective legal solutions for debt enforcement",
       icon: Banknote,
       id: "debt-recovery"
     }
@@ -69,7 +69,7 @@ export default function PracticeAreasPreview() {
   }
 
   return (
-    <section className="bg-lawas-heading py-24">
+    <section className="bg-lawas-background py-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
           className="text-center mb-16"
@@ -78,10 +78,10 @@ export default function PracticeAreasPreview() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="mb-6 text-3xl font-bold text-lawas-accent sm:text-4xl">
+          <h2 className="mb-6 text-3xl font-bold text-lawas-heading sm:text-4xl">
             Practice Areas
           </h2>
-          <p className="text-lg text-white max-w-2xl mx-auto">
+          <p className="text-lg text-lawas-body max-w-2xl mx-auto">
             Our expertise spans across multiple legal domains, providing comprehensive solutions for all your legal needs
           </p>
         </motion.div>
@@ -90,7 +90,11 @@ export default function PracticeAreasPreview() {
           {practiceAreas.map((area, index) => (
             <motion.div
               key={area.title}
-              className="bg-white/5 backdrop-blur-sm rounded-lg p-6 flex flex-col items-center text-center cursor-pointer hover:bg-white/10 transition-colors"
+              className={`bg-white shadow-lg rounded-lg p-6 flex flex-col items-center text-center cursor-pointer hover:shadow-xl transition-shadow ${
+                index === practiceAreas.length - 1 && practiceAreas.length % 3 === 1 
+                  ? 'lg:col-start-2' 
+                  : ''
+              }`}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: index * 0.1 }}
@@ -100,10 +104,10 @@ export default function PracticeAreasPreview() {
               <div className="mb-4 p-3 rounded-full bg-lawas-button/20">
                 <area.icon className="w-8 h-8 text-lawas-button" />
               </div>
-              <h3 className="text-xl font-semibold text-lawas-accent mb-2">
+              <h3 className="text-xl font-semibold text-lawas-heading mb-2">
                 {area.title}
               </h3>
-              <p className="text-lawas-accent/70 text-sm">
+              <p className="text-lawas-body text-sm">
                 {area.description}
               </p>
             </motion.div>

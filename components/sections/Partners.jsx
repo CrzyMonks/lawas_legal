@@ -59,7 +59,7 @@ export default function Partners() {
   }, [])
 
   return (
-    <section className="bg-lawas-heading py-24">
+    <section className="bg-lawas-background py-24">
       <div ref={containerRef} className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
           className="text-center"
@@ -68,7 +68,7 @@ export default function Partners() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="mb-12 text-3xl font-bold text-lawas-accent sm:text-4xl">
+          <h2 className="mb-12 text-3xl font-bold text-lawas-heading sm:text-4xl">
             Our Partners
           </h2>
 
@@ -91,10 +91,10 @@ export default function Partners() {
                     sizes="(max-width: 768px) 90vw, 300px"
                   />
                 </div>
-                <h3 className="mb-2 text-2xl font-semibold text-lawas-accent">
+                <h3 className="mb-2 text-2xl font-semibold text-black">
                   {partner.name}
                 </h3>
-                <p className="text-lg text-white">
+                <p className="text-lg text-black">
                   {partner.role}
                 </p>
               </div>

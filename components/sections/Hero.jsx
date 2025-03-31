@@ -33,7 +33,7 @@ export default function Hero() {
   }
 
   return (
-    <section className="relative h-screen w-full bg-lawas-heading">
+    <section className="relative h-screen w-full bg-lawas-overlay">
       <div className={`absolute inset-0 transition-opacity duration-500`}>
         <video 
           preload="auto"
@@ -49,7 +49,7 @@ export default function Hero() {
           Your browser does not support the video tag.
         </video>
         {/* Overlay */}
-        <div className="absolute inset-0 bg-lawas-heading/70" />
+        <div className="absolute inset-0 bg-lawas-contact/70" />
       </div>
 
       <div 

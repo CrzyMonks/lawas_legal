@@ -95,7 +95,7 @@ export default function PracticeAreasPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-lawas-heading py-24">
+    <div className="min-h-screen bg-lawas-background py-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="mx-auto max-w-3xl text-center"
@@ -103,10 +103,10 @@ export default function PracticeAreasPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="mb-6 text-4xl font-bold text-lawas-accent sm:text-5xl">
+          <h1 className="mb-6 text-4xl font-bold text-lawas-heading sm:text-5xl">
             Practice Areas
           </h1>
-          <p className="mb-16 text-lg text-white">
+          <p className="mb-16 text-lg text-lawas-body">
             Our firm offers expertise across a wide range of legal practice areas, providing comprehensive solutions tailored to your specific needs.
           </p>
         </motion.div>
@@ -124,24 +124,24 @@ export default function PracticeAreasPage() {
                 id={area.id}
                 className={`rounded-lg p-8 backdrop-blur-sm scroll-mt-24 transition-all duration-500 ${
                   highlightedSection === area.id 
-                  ? "bg-lawas-accent/20 shadow-lg ring-2 ring-lawas-button" 
-                  : "bg-white/10"
+                  ? "bg-lawas-heading/10 shadow-lg ring-2 ring-lawas-button" 
+                  : "bg-white shadow-lg"
                 }`}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <h2 className="mb-4 text-2xl font-bold text-lawas-accent">
+                <h2 className="mb-4 text-2xl font-bold text-lawas-heading">
                   {area.title}
                 </h2>
-                <p className="mb-6 text-white">
+                <p className="mb-6 text-lawas-body">
                   {area.description}
                 </p>
                 {area.services.length > 0 && (
                   <ul className="list-disc pl-6 space-y-2">
                     {area.services.map((service, serviceIndex) => (
-                      <li key={serviceIndex} className="text-white">
+                      <li key={serviceIndex} className="text-lawas-body">
                         {service}
                       </li>
                     ))}

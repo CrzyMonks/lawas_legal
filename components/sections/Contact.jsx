@@ -56,7 +56,7 @@ export default function Contact() {
   }, [])
 
   return (
-    <section id="contact" className="bg-lawas-heading py-24">
+    <section id="contact" className="bg-lawas-contact py-24">
       <div ref={containerRef} className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl">
           <div className="text-center">
@@ -70,6 +70,7 @@ export default function Contact() {
 
           <div className="grid gap-8 md:grid-cols-2">
             <div className="animate-fade-in rounded-lg bg-white/5 p-6 shadow-lg backdrop-blur-sm">
+              <h3 className="text-lg md:text-lg font-bold text-yellow-500 mb-6 text-center uppercase tracking-wider bg-white/10 py-4 px-6 rounded-lg shadow-lg backdrop-blur-sm border-2 border-yellow-500/20 transform hover:scale-105 transition-transform duration-300">Get Free Legal Consultation</h3>
               {showSuccess ? (
                 <div className="flex flex-col items-center justify-center h-full py-8 text-center">
                   <CheckCircle className="w-16 h-16 text-green-500 mb-4" />
@@ -99,6 +100,15 @@ export default function Contact() {
                     />
                   </div>
                   <div>
+                    <Input
+                      type="number"
+                      name="phone"
+                      placeholder="Your Phone Number"
+                      className="w-full text-lawas-accent"
+                      required
+                    />
+                  </div>
+                  <div>
                     <Textarea
                       name="message"
                       placeholder="Your Query"
@@ -121,7 +131,7 @@ export default function Contact() {
               <div className="flex items-start gap-3">
                 <MapPin className="w-6 h-6 text-lawas-button mt-1 flex-shrink-0" />
                 <div>
-                  <h3 className="mb-2 text-xl font-semibold text-lawas-accent">
+                  <h3 className="mb-2 text-xl font-semibold text-lawas-button">
                     Office Location
                   </h3>
                   <p className="text-white">
@@ -145,17 +155,17 @@ export default function Contact() {
                   {/* <Phone className="w-6 h-6 text-lawas-accent flex-shrink-0" /> */}
                 </div>
                 <div>
-                  <h3 className="mb-2 text-xl font-semibold text-lawas-accent">
+                  <h3 className="mb-2 text-xl font-semibold text-lawas-button">
                     Contact Information
                   </h3>
                   <p className="text-white">
-                    <a href="mailto:lawaslegal@gmail.com" className="text-lawas-button hover:underline">lawaslegal@gmail.com</a>
+                    <a href="mailto:lawaslegal@gmail.com" className="hover:underline">lawaslegal@gmail.com</a>
                   </p>
-                  <div className="mt-2 space-y-1">
-                    <a href="tel:+919871873194" className="text-lawas-button hover:underline block">
+                  <div className="mt-2 space-y-1 text-white">
+                    <a href="tel:+919871873194" className="hover:underline block">
                       +91 9871873194
                     </a>
-                    <a href="tel:+919871833230" className="text-lawas-button hover:underline block">
+                    <a href="tel:+919871833230" className="hover:underline block">
                       +91 9871833230
                     </a>
                   </div>
@@ -165,10 +175,10 @@ export default function Contact() {
               <div className="flex items-start gap-3">
                 <Clock className="w-6 h-6 text-lawas-button mt-1 flex-shrink-0" />
                 <div>
-                  <h3 className="mb-2 text-xl font-semibold text-lawas-accent">
+                  <h3 className="mb-2 text-xl font-semibold text-lawas-button">
                     Business Hours
                   </h3>
-                  <p className="text-lawas-button">
+                  <p className="text-white">
                     Monday - Saturday: 9:00 AM - 8:00 PM<br />
                     Sunday: By Appointment
                   </p>
@@ -179,7 +189,7 @@ export default function Contact() {
               <div className="flex items-start gap-3">
                 <User className="w-6 h-6 text-lawas-button mt-1 flex-shrink-0" />
                 <div>
-                  <h3 className="mb-3 text-xl font-semibold text-lawas-accent">
+                  <h3 className="mb-3 text-xl font-semibold text-lawas-button">
                     Connect With Us
                   </h3>
                   <div className="flex gap-4">
@@ -187,7 +197,7 @@ export default function Contact() {
                       href="https://www.linkedin.com/company/lawas-legal"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-lawas-button hover:text-lawas-accent/80 transition-colors"
+                      className="text-white hover:text-lawas-accent/80 transition-colors"
                     >
                       <Linkedin className="w-6 h-6" />
                     </a>
@@ -195,7 +205,7 @@ export default function Contact() {
                       href="https://www.instagram.com/lawas_legal"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-lawas-button hover:text-lawas-accent/80 transition-colors"
+                      className="text-white hover:text-lawas-accent/80 transition-colors"
                     >
                       <Instagram className="w-6 h-6" />
                     </a>
